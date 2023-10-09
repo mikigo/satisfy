@@ -4,17 +4,26 @@ from pydantic import BaseModel
 
 
 class ItemBase(BaseModel):
-    title: str
-    description: Union[str, None] = None
+    args: str
+    func_name: str
+    sys_arch: str
+    px: str
+
+
+
+class ItemGet(ItemBase):
+    pass
 
 
 class ItemCreate(ItemBase):
-    pass
+    location_x: int
+    location_y: int
 
 
 class Item(ItemBase):
     id: int
-    owner_id: int
+    location_x: int
+    location_y: int
 
     class Config:
         orm_mode = True
