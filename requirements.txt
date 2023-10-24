@@ -1,4 +1,6 @@
 -i https://pypi.tuna.tsinghua.edu.cn/simple
-fastapi
-uvicorn[standard]
-SQLAlchemy
+
+django
+django-simpleui
+djangorestframework
+drf-yasg
