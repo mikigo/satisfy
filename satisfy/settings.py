@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,6 +23,8 @@ SECRET_KEY = 'django-insecure-ub5kt!1^#2^jo&ag%okd&r#p)eymg-#e+l^!m64zf+g@4!-n+u
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+PROJECT_NAME = "satisfy"
 
 ALLOWED_HOSTS = []
 
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'satisfy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,6 +83,7 @@ DATABASES = {
         'NAME': f'{BASE_DIR}/db.sqlite3',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -133,6 +136,12 @@ SIMPLEUI_HOME_ACTION = False
 SIMPLEUI_HOME_QUICK = True
 # 服务器信息
 SIMPLEUI_HOME_INFO = False
+
+# 修改左侧菜单首页设置
+SIMPLEUI_HOME_PAGE = '/admin/dashboard/'
+# SIMPLEUI_HOME_TITLE = ''
+# SIMPLEUI_HOME_ICON = 'fa fa-code'
+
 # 默认主题
 # SIMPLEUI_DEFAULT_THEME = 'admin.lte.css'
 
